@@ -1,5 +1,5 @@
 module.exports = {
-   create: (req, res, next) => {
+   create: (req, res) => {
      const db = req.app.get('db');
      const { name, description, price, image_url } = req.body;
  
@@ -11,7 +11,7 @@ module.exports = {
        });
    },
  
-   getOne: (req, res, next) => {
+   getOne: (req, res) => {
      const db = req.app.get('db');
      const { id } = req.params;
  
@@ -23,7 +23,7 @@ module.exports = {
        });
    },
  
-   getAll: (req, res, next) => {
+   getAll: (req, res) => {
      const db = req.app.get('db');
  
      db.read_products()
@@ -34,7 +34,7 @@ module.exports = {
        });
    },
  
-   update: (req, res, next) => {
+   update: (req, res) => {
      const db = req.app.get('db');
      const { params, query } = req;
  
@@ -46,7 +46,7 @@ module.exports = {
        });
    },
  
-   delete: (req, res, next) => {
+   delete: (req, res) => {
      const db = req.app.get('db');
      const { id } = req.params;
  
